@@ -82,7 +82,6 @@ const totalUsd = computed(() => {
 
 const usdBalanceNum = computed(() => toNumber(usdBalance.value));
 const assetBalanceNum = computed(() => toNumber(assetRow(symbol.value).amount));
-const assetLockedNum = computed(() => toNumber(assetRow(symbol.value).locked_amount));
 
 const canAffordBuy = computed(() => {
   if (side.value !== 'BUY') return true;

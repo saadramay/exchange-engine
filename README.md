@@ -8,24 +8,21 @@
 
 ## Setup
 
-**Backend:**
+**Step 1: Install Dependencies**
 ```bash
 composer install
+npm install
+```
+
+**Step 2: Configure Environment**
+```bash
 cp .env.example .env
 php artisan key:generate
-php artisan migrate:fresh --seed
-php artisan serve
 ```
 
-**Frontend:**
-```bash
-npm install
-npm run dev
-```
+**Step 3: Setup Database**
 
-**Environment:**
-
-Update `.env` with your database and Pusher credentials:
+Setup a MySQL database:
 ```env
 DB_DATABASE=exchange_engine
 DB_USERNAME=root
@@ -44,6 +41,16 @@ VITE_BACKEND_URL=http://localhost:8000
 APP_URL=http://localhost:8000
 SANCTUM_STATEFUL_DOMAINS=localhost:5173,localhost:8000
 SESSION_DOMAIN=localhost
+```
+
+**Step 4: Run Migrations & Seed Data**
+```bash
+php artisan migrate:fresh --seed
+```
+
+**Step 5: Start Development Server**
+```bash
+composer run dev
 ```
 
 ## Demo Users (seeded)
